@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid'
-import { iCharacter } from '../useCases/createUseDTO'
 
 export class Character {
   public readonly id: string
@@ -9,10 +8,15 @@ export class Character {
   public characterPower: string
   public email: string
   public darksteel: string
+  public hp: string
+  public mp: string
+  public physicalATK: string
+  public physicalDEF: string
+  public speelDEF: string
   public createdAt: Date
   public updateAt: Date
 
-  constructor(props: iCharacter, id?: string) {
+  constructor(props: Omit<Character, 'id'>, id?: string) {
     Object.assign(this, props)
 
     if (!id) {
@@ -22,13 +26,5 @@ export class Character {
       this.id = id
     }
   }
-
-  execute() {
-    return  {
-      this: this
-    }
-  }
-
-  save() {}
 }
 
