@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { SqliteCharacterRepository } from "../repositories/implementation/SqliteCharacterRepositories";
+import { Character } from "../entities/Character";
+import { CallTracker } from "assert";
 
 const db = new SqliteCharacterRepository()
 
@@ -12,33 +14,22 @@ router.get('/', (req, res) => {
     // })
 })
 
-const data = {
-    id: 'eba433c5-7447-45b4-be0a-db6c194fe659',
-    createdAt: '09/02/2022 21:05:16',
-    name: 'Goku',
-    darksteel: '0',
-    email: 'null',
-    characterPower: '0',
-    hp: '0',
-    mp: '0',
-    physicalATK: '0',
-    physicalDEF: '0',
-    speelDEF: '0',
-    level: '0',
-    updatedAt: '09/02/2022 21:05:16'
-}
 router.post('/setCharacter', async (req, res) => {
-    console.log(req.body)
-    const { name } = req.body
-    const result = await db.findByName(name)
-    return res.status(201).json(result)
+    try {
+        console.log(req.body)
+        const data:Character = new Character(req.body)
+        await db.save(data)
+        return res.status(201).json('User created successfully.')
+    } catch (err) {
+        console.log(err)
+        return res.status(406).json(err)
+    }
 })
 
 router.post('/createWallet', (req, res) => {
     console.log(req.body)
     return res.status(201).json(req.body)
 })
-
 
 router.get('/getCharacter', async (req, res) => {
     const { name } = req.body

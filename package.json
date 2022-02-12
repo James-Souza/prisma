@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "tsnd src/server/server.ts --transpile-only"
+    "serve": "cls && tsnd --transpile-only --ignore-watch node_modules src/server/server.ts ",
+    "prisma": "tsnd --transpile-only --ignore-watch node_moules src/repositories/implementation/SqliteCharacterRepositories.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
