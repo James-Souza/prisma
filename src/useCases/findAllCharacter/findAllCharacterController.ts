@@ -1,15 +1,14 @@
 import { Request, Response } from 'express'
-import { FindCharacterUseCases } from './findCharacterUseCases'
+import { FindAllCharacterUseCases } from './findAllCharacterUseCases'
 
-export class FindCharacterController {
+export class FindAllCharacterController {
     constructor(
-        private findCharacteruseCases: FindCharacterUseCases
+        private findAllCharacteruseCases: FindAllCharacterUseCases
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response> {
         try {
-            const data = Object.assign(request.body, request.params)
-            const character = await this.findCharacteruseCases.execute(data)
+            const character = await this.findAllCharacteruseCases.execute()
             return response.status(201).json({ character })
         } catch (err) {
             return response.status(400).json({ 

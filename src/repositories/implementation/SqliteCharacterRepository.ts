@@ -12,9 +12,14 @@ export class SqliteCharacterRepository implements ICharacterRepository {
     }
 
     async findByName(name: string): Promise<Character> {
-        const characters = await prisma.characters.findFirst({
+        const character = await prisma.characters.findFirst({
             where: { name: name }
         })
+        return character
+    }
+
+    async findAll(): Promise<Array<Character>> {
+        const characters = await prisma.characters.findMany()
         return characters
     }
 
