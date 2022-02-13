@@ -17,4 +17,9 @@ export class SqliteWalletRepository implements IWalletRepository {
         })
         return wallet
     }
+
+    async findAll(): Promise<Wallet[]> {
+        const wallets = await prisma.wallets.findMany()
+        return wallets
+    }
 }

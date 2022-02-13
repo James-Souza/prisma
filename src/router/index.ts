@@ -2,14 +2,12 @@ import { Router } from "express";
 import { createCharacterController } from "../useCases/createCharacter";
 import { createWalletController } from "../useCases/createWallet";
 import { findCharacterController } from "../useCases/findCharacter";
-import { findAllCharacterController } from "../useCases/findAllCharacter";
+import { findAllCharacterController } from "../useCases/findAllCharacters";
 import { findWalletController } from "../useCases/findWallet";
+import { findAllWalletsController } from "../useCases/findAllWallets";
 
 export const router = Router()
 
-router.get('/', (request, response) => {
-    return response.send('Olá')
-})
 // Character
 router.post('/setCharacter', async (request, response) => {
     return await createCharacterController.handle(request, response)
@@ -21,6 +19,10 @@ router.get('/getCharacter/:name', async (request, response) => {
 
 router.get('/getAllCharacters/', async (request, response) => {
     return await findAllCharacterController.handle(request, response)
+})
+
+router.get('/getAllWallets/', async (request, response) => {
+    return await findAllWalletsController.handle(request, response)
 })
 
 // Wallet

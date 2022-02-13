@@ -1,6 +1,6 @@
 import { SqliteCharacterRepository } from "../../repositories/implementation/SqliteCharacterRepository";
-import { FindAllCharacterUseCases } from "./findAllCharacterUseCases";
-import { FindAllCharacterController } from "./findAllCharacterController";
+import { FindAllCharacterUseCases } from "./findAllCharactersUseCases";
+import { FindAllCharacterController } from "./findAllCharactersController";
 
 const sqliteCharacterRepository = new SqliteCharacterRepository()
 

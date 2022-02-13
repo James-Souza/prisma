@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { FindAllCharacterUseCases } from './findAllCharacterUseCases'
+import { FindAllCharacterUseCases } from './findAllCharactersUseCases'
 
 export class FindAllCharacterController {
     constructor(
