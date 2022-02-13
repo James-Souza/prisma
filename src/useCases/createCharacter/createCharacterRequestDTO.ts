@@ -1,4 +1,5 @@
-export interface ICharacter {
+export interface ICreateCharacterRequestDTO {
+    id: string
     name: string
     level: string
     characterPower: string
@@ -9,6 +10,6 @@ export interface ICharacter {
     physicalATK: string
     physicalDEF: string
     speelDEF: string
-    createdAt: Date
-    updateAt: Date
+    createdAt: string
+    updatedAt: string
 }

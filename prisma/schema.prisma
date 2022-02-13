@@ -27,8 +27,7 @@ model Characters {
 }
 
 model Wallets {
-  id        String @unique
-  email     String
+  email     String @unique
   draco     String
   hydra     String
   createdAt String
