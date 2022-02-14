@@ -9,17 +9,20 @@ export class SqliteWalletRepository implements IWalletRepository {
         await prisma.wallets.create({
             data: wallet
         })
+        await prisma.$disconnect()
     }
 
     async findByName(email: string): Promise<Wallet> {
         const wallet = await prisma.wallets.findFirst({
             where: { email }
         })
+        await prisma.$disconnect()
         return wallet
     }
 
     async findAll(): Promise<Wallet[]> {
         const wallets = await prisma.wallets.findMany()
+        await prisma.$disconnect()
         return wallets
     }
 }

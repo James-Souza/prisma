@@ -9,17 +9,24 @@ export class SqliteCharacterRepository implements ICharacterRepository {
         await prisma.characters.create({
             data: character
         })
+        await prisma.$disconnect()
     }
 
     async findByName(name: string): Promise<Character> {
         const character = await prisma.characters.findFirst({
             where: { name: name }
         })
+        await prisma.$disconnect()
         return character
     }
 
     async findAll(): Promise<Array<Character>> {
-        const characters = await prisma.characters.findMany()
+        const characters = await prisma.characters.findMany({
+            orderBy: {
+                name: 'asc'
+            }
+        })
+        await prisma.$disconnect()
         return characters
     }
 

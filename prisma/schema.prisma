@@ -33,3 +33,8 @@ model Wallets {
   createdAt String
   updatedAt String
 }
+
+model Areas {
+  id   String @unique
+  name String
+}

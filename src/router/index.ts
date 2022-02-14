@@ -5,6 +5,7 @@ import { findCharacterController } from "../useCases/findCharacter";
 import { findAllCharacterController } from "../useCases/findAllCharacters";
 import { findWalletController } from "../useCases/findWallet";
 import { findAllWalletsController } from "../useCases/findAllWallets";
+import { findAllAreasController } from "../useCases/findAllAreas";
 
 export const router = Router()
 
@@ -32,4 +33,8 @@ router.get('/getWallet/:email', async (request, response) => {
 
 router.post('/setWallet', async (request, response) => {
     return await createWalletController.handle(request, response)
+})
+
+router.get('/getAreas', async (request, response)=> {
+    return await findAllAreasController.handle(request, response)
 })

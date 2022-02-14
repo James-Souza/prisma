@@ -9,7 +9,7 @@ export class FindAllWalletController {
     async handle(request: Request, response: Response): Promise<Response> {
         try {
             const wallets = await this.findAllWalletsUseCases.execute()
-            return response.status(201).json({ wallets })
+            return response.status(201).json(wallets)
         } catch (err) {
             return response.status(400).json({
                 message: err.message
