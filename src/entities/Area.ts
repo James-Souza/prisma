@@ -1,15 +1,15 @@
-import { randomUUID } from "crypto"
+import { v4 as uuidv4 } from 'uuid'
 
 export class Area {
-    public readonly id
+    public readonly id: string
 
-    public name
+    public name: string
 
     constructor(props: Omit<Area, 'id'>, id?: string) {
         Object.assign(this, props)
 
         if (!id) {
-            id: randomUUID()
+            this.id = uuidv4()
         }
         else {
             this.id = id

@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "cls && tsnd --transpile-only --ignore-watch node_modules src/server/server.ts ",
-    "prisma": "tsnd --transpile-only --ignore-watch node_moules src/repositories/implementation/SqliteCharacterRepositories.ts"
+    "prisma": "tsnd --transpile-only --ignore-watch node_moules src/repositories/implementation/SqliteCharacterRepositories.ts",
+    "test": "npx tsnd src/loren.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -18,7 +19,7 @@
     "morgan": "^1.10.0",
     "prism": "^4.1.2",
     "prisma": "^3.8.1",
-    "ts-node": "^10.4.0",
+    "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   },
   "dependencies": {

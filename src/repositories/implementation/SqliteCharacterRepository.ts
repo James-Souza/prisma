@@ -16,6 +16,8 @@ export class SqliteCharacterRepository implements ICharacterRepository {
         const character = await prisma.characters.findFirst({
             where: { name: name }
         })
+
+
         await prisma.$disconnect()
         return character
     }
