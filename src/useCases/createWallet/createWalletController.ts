@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import { Wallet } from '../../entities/Wallet'
 import { CreateWalletUseCases } from './createWalletUseCases'
 
 export class CreateWalletController {
@@ -7,8 +8,9 @@ export class CreateWalletController {
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const wallet = request.body
         try {
+            const { email } = request.body
+            const wallet = new Wallet(request.body, email)
             await this.createWalletUseCases.execute(wallet)
             return response.status(201).json({
                 message: 'Wallet created Successfully.'

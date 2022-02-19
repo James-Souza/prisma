@@ -11,14 +11,14 @@ datasource db {
 }
 
 model Characters {
-  id             String @unique
+  id             String   @unique
   name           String
   level          String
   characterPower String
   email          String
   darksteel      String
-  createdAt      String
-  updatedAt      String
+  createdAt      DateTime
+  updatedAt      DateTime
   hp             String
   mp             String
   physicalATK    String
@@ -27,14 +27,26 @@ model Characters {
 }
 
 model Wallets {
-  email     String @unique
+  email     String   @unique
   draco     String
   hydra     String
-  createdAt String
-  updatedAt String
+  createdAt DateTime
+  updatedAt DateTime
 }
 
 model Areas {
   id   String @unique
   name String
+}
+
+model Session {
+  id           String   @unique
+  name         String
+  area         String
+  initialValue Float
+  finalValue   Float
+  status       String
+  createdAt    DateTime
+  updatedAt    DateTime
+  serverDate   DateTime
 }

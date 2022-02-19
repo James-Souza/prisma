@@ -13,8 +13,8 @@ export class Character {
   public physicalATK: string
   public physicalDEF: string
   public speelDEF: string
-  public createdAt: string
-  public updatedAt: string
+  public createdAt: Date
+  public updatedAt: Date
   
 
   constructor(props: Omit<Character, 'id'>, id?: string) {

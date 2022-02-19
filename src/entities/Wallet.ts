@@ -3,8 +3,8 @@ export class Wallet {
 
     public draco: string
     public hydra: string
-    public createdAt: string
-    public updatedAt: string
+    public createdAt: Date
+    public updatedAt: Date
 
     constructor(props: Omit<Wallet, 'email'>, email?: string) {
         Object.assign(this, props)

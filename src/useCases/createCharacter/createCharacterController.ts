@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Character } from "../../entities/Character";
 import { CreateCharacterUseCases } from "./createCharacterUseCases";
 
 export class CreateCharacterController {
@@ -7,7 +8,8 @@ export class CreateCharacterController {
     ) { }
     async handle(request: Request, response: Response): Promise<Response> {
         try {
-            const character = request.body
+            const { id } = request.body
+            const character = new Character(request.body, id)
             await this.createCharacterUseCases.execute(character)
             return response.status(201).json({
                 message: 'User created successfully.'

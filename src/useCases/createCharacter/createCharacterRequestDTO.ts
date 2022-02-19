@@ -10,6 +10,6 @@ export interface ICreateCharacterRequestDTO {
     physicalATK: string
     physicalDEF: string
     speelDEF: string
-    createdAt: string
-    updatedAt: string
+    createdAt: Date
+    updatedAt: Date
 }
