@@ -11,12 +11,12 @@ export class SqliteSessonRepository implements ISessionRepository {
         })
         await prisma.$disconnect()
     }
-    async findByNameAndData(name: string, area: string, createdAt: Date): Promise<Session> {
+    async findByNameAndData(character: string, area: string, serverDate: string): Promise<Session> {
         const session = await prisma.session.findFirst({
             where: {
-                name,
+                character,
                 area,
-                createdAt
+                serverDate
             }
         })
         await prisma.$disconnect()

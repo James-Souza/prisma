@@ -1,8 +1,8 @@
 export class Wallet {
     public readonly email: string
 
-    public draco: string
-    public hydra: string
+    public draco: number
+    public hydra: number
     public createdAt: Date
     public updatedAt: Date
 

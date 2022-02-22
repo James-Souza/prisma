@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { createCharacterController } from "../useCases/createCharacter";
 import { createWalletController } from "../useCases/createWallet";
+import { createSessionController } from "../useCases/createSession";
 import { findCharacterController } from "../useCases/findCharacter";
 import { findAllCharacterController } from "../useCases/findAllCharacters";
 import { findWalletController } from "../useCases/findWallet";
@@ -33,6 +34,10 @@ router.get('/getWallet/:email', async (request, response) => {
 
 router.post('/setWallet', async (request, response) => {
     return await createWalletController.handle(request, response)
+})
+
+router.post('/setSession', async (request, response) => {
+    return await createSessionController.handle(request, response)
 })
 
 router.get('/getAreas', async (request, response)=> {

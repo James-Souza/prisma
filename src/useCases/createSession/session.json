@@ -1,0 +1,13 @@
+{
+    "id": "cec920d8-b8f4-4c95-8f7e-b794a31f0210",
+    "name": "Bryn",
+    "area": "Praça Mágica",
+    "status": "Em andamento",
+    "initialValue": 321.0,
+    "initialTime": "2021-12-01T15:00:00.000Z",
+    "finalValue": 450.3,
+    "finalTime": "2021-12-01T15:00:00.000Z",
+    "serverDate": "2021-12-01T15:00:00.000Z",
+    "createdAt": "2021-12-01T15:00:00.000Z",
+    "updatedAt": "2021-12-01T15:00:00.000Z"
+}

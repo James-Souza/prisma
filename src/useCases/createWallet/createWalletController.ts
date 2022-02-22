@@ -13,7 +13,7 @@ export class CreateWalletController {
             const wallet = new Wallet(request.body, email)
             await this.createWalletUseCases.execute(wallet)
             return response.status(201).json({
-                message: 'Wallet created Successfully.'
+                message: 'Wallet created successfully.'
             })
         } catch (err) {
             return response.status(400).json({

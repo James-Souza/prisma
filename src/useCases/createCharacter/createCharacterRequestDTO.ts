@@ -1,15 +1,15 @@
 export interface ICreateCharacterRequestDTO {
     id: string
     name: string
-    level: string
-    characterPower: string
+    level: number
+    characterPower: number
     email: string
-    darksteel: string
-    hp: string
-    mp: string
-    physicalATK: string
-    physicalDEF: string
-    speelDEF: string
+    darksteel: number
+    hp: number
+    mp: number
+    physicalATK: number
+    physicalDEF: number
+    speelDEF: number
     createdAt: Date
     updatedAt: Date
 }

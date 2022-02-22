@@ -4,15 +4,15 @@ export class Character {
   public readonly id: string
 
   public name: string
-  public level: string
-  public characterPower: string
+  public level: number
+  public characterPower: number
   public email: string
-  public darksteel: string
-  public hp: string
-  public mp: string
-  public physicalATK: string
-  public physicalDEF: string
-  public speelDEF: string
+  public darksteel: number
+  public hp: number
+  public mp: number
+  public physicalATK: number
+  public physicalDEF: number
+  public speelDEF: number
   public createdAt: Date
   public updatedAt: Date
   

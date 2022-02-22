@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "cls && tsnd --transpile-only --ignore-watch node_modules src/server/server.ts ",
     "prisma": "tsnd --transpile-only --ignore-watch node_moules src/repositories/implementation/SqliteCharacterRepositories.ts",
-    "test": "npx tsnd src/loren.ts"
+    "test": "npx ts-node src/loren.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

@@ -1,11 +1,13 @@
 export interface ICreateSessionRequestDTO {
     id: string
+    character: string
     area: string
-    initialValue: number
-    finalValue: number
     status: string
-    name: string
+    initialValue: number
+    initialTime: Date
+    finalValue: number
+    finalTime: Date
+    serverDate: string
     createdAt: Date
     updatedAt: Date
-    serverDate: Date
 }

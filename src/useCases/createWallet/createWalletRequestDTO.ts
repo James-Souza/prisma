@@ -1,7 +1,7 @@
 export interface ICreateWalletRequestDTO {
     email: string
-    draco: string
-    hydra: string
+    draco: number
+    hydra: number
     createdAt: Date
     updatedAt: Date
 }
