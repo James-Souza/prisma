@@ -7,6 +7,7 @@ import { findAllCharacterController } from "../useCases/findAllCharacters";
 import { findWalletController } from "../useCases/findWallet";
 import { findAllWalletsController } from "../useCases/findAllWallets";
 import { findAllAreasController } from "../useCases/findAllAreas";
+import { updateSessionControler } from "../useCases/updateSession";
 
 export const router = Router()
 
@@ -40,6 +41,10 @@ router.post('/setSession', async (request, response) => {
     return await createSessionController.handle(request, response)
 })
 
-router.get('/getAreas', async (request, response)=> {
+router.post('/updateSession', async (request, response) => {
+    return await updateSessionControler.handle(request, response)
+})
+
+router.get('/getAreas', async (request, response) => {
     return await findAllAreasController.handle(request, response)
 })

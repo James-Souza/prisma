@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { Session } from "../../entities/Session";
-import { ISessionRepository } from "../ISessionrepository";
+import { IUpdateSessionRequestDTO } from "../../useCases/updateSession/UpdateSessionRequestDTO";
+import { ISessionRepository } from "../ISessionRepository";
 
 const prisma = new PrismaClient()
 
@@ -21,5 +22,19 @@ export class SqliteSessonRepository implements ISessionRepository {
         })
         await prisma.$disconnect()
         return session
+    }
+    async update(data: IUpdateSessionRequestDTO, sessionToUpdate: Session) {
+        await prisma.session.update({
+            where: {
+                id: sessionToUpdate.id
+            },
+            data: {
+                initialTime: data.initialTime,
+                initialValue: data.initialValue,
+                finalValue: data.finalValue,
+                finalTime: data.finalTime,
+                updatedAt: data.updatedAt
+            }
+        })
     }
 }

@@ -1,4 +1,4 @@
-import { ISessionRepository } from "../../repositories/ISessionrepository";
+import { ISessionRepository } from "../../repositories/ISessionRepository";
 import { ICreateSessionRequestDTO } from "./createSessionRequestDTO";
 
 export class CreateSessionUseCases {
